@@ -1,0 +1,29 @@
+{
+  "name": "play-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "serve -p 5173",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-config": "node scripts/check-build-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@dcloudio/uni-cli-i18n": "^2.0.2-5000720260410001",
+    "@dcloudio/uni-cli-shared": "^2.0.2-5000720260410001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-5000720260410001",
+    "serve": "^14.2.6",
+    "vite": "5.2.8",
+    "webpack": "^5.106.2"
+  },
+  "dependencies": {
+    "semver": "^7.7.4",
+    "vue": "3.4.21"
+  }
+}

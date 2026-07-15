@@ -1,0 +1,33 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "video_id"],
+  "permission": {
+    "read": "doc.user_id == auth.uid",
+    "create": "auth.uid != null",
+    "update": "doc.user_id == auth.uid",
+    "delete": "doc.user_id == auth.uid"
+  },
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID",
+      "forceDefaultValue": {
+        "$env": "uid"
+      }
+    },
+    "video_id": {
+      "bsonType": "string",
+      "description": "视频ID"
+    },
+    "create_time": {
+      "bsonType": "timestamp",
+      "description": "收藏时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "bsonType": "object",
+  "required": ["title", "video_url"],
+  "permission": {
+    "read": true,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成"
+    },
+    "title": {
+      "bsonType": "string",
+      "description": "视频标题",
+      "maxLength": 100,
+      "trim": "both"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "视频描述",
+      "maxLength": 500,
+      "trim": "both"
+    },
+    "cover_url": {
+      "bsonType": "string",
+      "description": "封面图地址",
+      "trim": "both"
+    },
+    "video_url": {
+      "bsonType": "string",
+      "description": "视频播放地址",
+      "trim": "both"
+    },
+    "category": {
+      "bsonType": "string",
+      "description": "视频分类",
+      "maxLength": 50,
+      "trim": "both"
+    },
+    "view_count": {
+      "bsonType": "int",
+      "description": "观看次数",
+      "defaultValue": 0,
+      "minimum": 0
+    },
+    "like_count": {
+      "bsonType": "int",
+      "description": "点赞数",
+      "defaultValue": 0,
+      "minimum": 0
+    },
+    "duration": {
+      "bsonType": "int",
+      "description": "视频时长（秒）",
+      "minimum": 0
+    },
+    "create_time": {
+      "bsonType": "timestamp",
+      "description": "创建时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "favorite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  },
+  "engines": {
+    "node": "16.15.1"
+  }
+}

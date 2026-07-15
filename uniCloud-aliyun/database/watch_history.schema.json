@@ -1,0 +1,51 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "video_id"],
+  "permission": {
+    "read": "doc.user_id == auth.uid",
+    "create": "auth.uid != null",
+    "update": "doc.user_id == auth.uid",
+    "delete": "doc.user_id == auth.uid"
+  },
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成"
+    },
+    "user_id": {
+      "bsonType": "string",
+      "description": "用户ID",
+      "forceDefaultValue": {
+        "$env": "uid"
+      }
+    },
+    "video_id": {
+      "bsonType": "string",
+      "description": "视频ID"
+    },
+    "watch_duration": {
+      "bsonType": "int",
+      "description": "本次观看时长（秒）",
+      "defaultValue": 0,
+      "minimum": 0
+    },
+    "total_duration": {
+      "bsonType": "int",
+      "description": "累计观看时长（秒）",
+      "defaultValue": 0,
+      "minimum": 0
+    },
+    "watch_count": {
+      "bsonType": "int",
+      "description": "观看次数",
+      "defaultValue": 1,
+      "minimum": 1
+    },
+    "last_watch_time": {
+      "bsonType": "timestamp",
+      "description": "最后观看时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}

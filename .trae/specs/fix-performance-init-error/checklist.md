@@ -1,0 +1,11 @@
+- [x] `utils/performance.js` 导出名从 `performance` 改为 `perfMonitor`，不再与全局 `performance` 冲突
+- [x] `utils/performance.js` 模块顶层不再执行 `Performance.getInstance()`，避免小程序环境触发 Web-only API
+- [x] `utils/performance.js` 中 `PerformanceMetrics` 构造函数不在小程序环境执行 `setupPerformanceObserver()` 和 `startMonitoring()`
+- [x] `utils/accessibility.js` 中 `Accessibility` 类的静态属性 `focusManager`、`speech`、`navigation` 不在模块顶层实例化
+- [x] `utils/accessibility.js` 中 `HapticFeedback` 在小程序环境使用 `uni.vibrateShort` 替代 `navigator.vibrate`
+- [x] `utils/child-safety.js` 中 `SafetyAnalyzer` 和 `TimeTracker` 不在模块顶层实例化
+- [x] `utils/index.js` 中 `isChildFriendlyContent` 和 `getRecommendedContent` 不使用 `require()` 动态导入
+- [x] `App.vue` 中 `addGlobalClass` 方法不使用 `document.querySelectorAll` 等 Web-only API
+- [x] `App.vue` 中 `loadAccessibilityConfig` 不使用 `require()` 加载配置文件
+- [x] 小程序环境启动不再报 `ReferenceError: Cannot access 'performance' before initialization`
+- [x] 小程序环境启动不再报 `Cannot read property 'querySelectorAll' of undefined`

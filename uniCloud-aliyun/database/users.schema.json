@@ -1,0 +1,38 @@
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": {
+    "read": "auth.uid != null && doc._id == auth.uid",
+    "create": true,
+    "update": "auth.uid != null && doc._id == auth.uid",
+    "delete": false
+  },
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成",
+      "bsonType": "string"
+    },
+    "openid": {
+      "bsonType": "string",
+      "description": "微信用户唯一标识openid",
+      "maxLength": 100
+    },
+    "nick_name": {
+      "bsonType": "string",
+      "description": "微信用户昵称",
+      "maxLength": 50
+    },
+    "avatar_url": {
+      "bsonType": "string",
+      "description": "微信用户头像链接",
+      "maxLength": 300
+    },
+    "create_time": {
+      "bsonType": "timestamp",
+      "description": "用户创建时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}
